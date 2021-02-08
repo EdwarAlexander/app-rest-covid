@@ -1,14 +1,7 @@
 <nav class="navegacion navbar navbar-expand-sm navbar-dark bg-dark shadow-lg">
-      <a class="navbar-brand" href="#">Api Rest Covid</a>
-      <button
-        class="navbar-toggler d-lg-none"
-        type="button"
-        data-toggle="collapse"
-        data-target="#collapsibleNavId"
-        aria-controls="collapsibleNavId"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      ></button>
+  <a class="navbar-brand" href="#">Api Rest Covid</a>
+  <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+    aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
 </nav>
 <main class="container">
   <div class="row mt-5 mb-5">
@@ -16,6 +9,81 @@
       <h1 class="display-3 text-center">
         API de consultas COVID-19
       </h1>
+    </div>
+  </div>
+
+  <div class="row mb-5">
+    <div class="col-12">
+      <div class="card shadow">
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <label for="opciones">Busca o selecciona un país para consultar:</label>
+              <select class="form-control" id="opciones">
+                <option value="1">Alemania7</option>
+                <option value="2">Brasil</option>
+              </select>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="row mb-5 caja-resultados">
+    <div class="col-12">
+      <h4 class="display-4 text-center">
+        Resultados para: <span class="lugar-buscado"></span>
+      </h4>
+    </div>
+  </div>
+
+  <div class="row caja-numeros">
+    <div class="col-md-3">
+      <div class="card">
+        <img src="../assets/img/population.svg" class="card-img-top imagen-card" alt="poblacion-total" />
+        <div class="card-body text-center">
+          <h5 class="card-title ">Población</h5>
+          <p class="card-text  texto-grande" id="texto-poblacion">
+            1238,99
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+        <img src="../assets/img/fever.svg" class="card-img-top imagen-card" alt="..." />
+        <div class="card-body text-center">
+          <h5 class="card-title">Infectados</h5>
+          <p class="card-text  texto-grande" id="texto-infectados">
+            1238,99
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+        <img src="../assets/img/patient.svg" class="card-img-top imagen-card" alt="..." />
+        <div class="card-body text-center">
+          <h5 class="card-title ">Recuperados</h5>
+          <p class="card-text  texto-grande" id="texto-recuperados">
+            1238,99
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+        <img src="../assets/img/sad.svg" class="card-img-top imagen-card" alt="..." />
+        <div class="card-body text-center">
+          <h5 class="card-title ">Fallecidos</h5>
+          <p class="card-text  texto-grande" id="texto-fallecidos">
+            1238,99
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </main>
