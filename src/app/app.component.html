@@ -19,8 +19,8 @@
           <form>
             <div class="form-group">
               <label for="opciones">Busca o selecciona un país para consultar:</label>
-              <select class="form-control" id="opciones" >
-                <option *ngFor="let item of localidad" value="{{item.id}}">{{item.country}}</option>
+              <select class="form-control" id="opciones" (change)='seleccion($event)'>
+                <option *ngFor="let item of localidad" value="{{item.id}}" >{{item.country}}</option>
                 
               </select>
             </div>
@@ -40,7 +40,7 @@
     </div>
   </div>
 
-  <div class="row caja-numeros">
+  <div class="row caja-numeros" *ngIf="resultado">
     <div class="col-md-3">
       <div class="card">
         <img src="../assets/img/population.svg" class="card-img-top imagen-card" alt="poblacion-total" />

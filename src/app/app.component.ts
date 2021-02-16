@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'app-rest-covid';
+  pais: string = '';
+  resultado: boolean = false;
 
   localidad = [];
   constructor(
@@ -19,4 +21,10 @@ export class AppComponent implements OnInit {
       this.localidad = data.locations;
     });
   };
+
+  seleccion(event: any) {
+    console.log(event.target.value);
+    //console.log(event.target.textContext);
+    this.resultado = true;
+  }
 }
