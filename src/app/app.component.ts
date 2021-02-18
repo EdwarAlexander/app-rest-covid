@@ -10,6 +10,11 @@ export class AppComponent implements OnInit {
   title = 'app-rest-covid';
   pais: string = '';
   resultado: boolean = false;
+  codigoPais: number = 0;
+  poblacion: number = 0;
+  infectados: number = 0;
+  recuperados: number = 0;
+  fallecidos: number = 0;
 
   localidad = [];
   constructor(
@@ -23,8 +28,14 @@ export class AppComponent implements OnInit {
   };
 
   seleccion(event: any) {
-    console.log(event.target.value);
-    //console.log(event.target.textContext);
+    this.resultado = false;
+    this.codigoPais = event.target.value;
+    this.paisesService.listarCantidad(this.codigoPais).subscribe(data => {
+      this.poblacion = data.location.country_population;
+      this.infectados = data.location.latest.confirmed;
+      this.recuperados = data.location.latest.recovered;
+      this.fallecidos = data.location.latest.deaths;
+    });
     this.resultado = true;
   }
 }

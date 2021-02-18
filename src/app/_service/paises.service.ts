@@ -6,15 +6,18 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PaisesService {
 
-  url : string ='https://coronavirus-tracker-api.herokuapp.com/v2/locations/';
-  
+  url: string = 'https://coronavirus-tracker-api.herokuapp.com/v2/locations/';
+
   constructor(
-    private http : HttpClient
+    private http: HttpClient
   ) { }
 
-  listar(){
+  listar() {
     console.log(this.url);
     return this.http.get<any>(this.url);
-    
+  }
+
+  listarCantidad(id: number) {
+    return this.http.get<any>(`${this.url}${id}`);
   }
 }
